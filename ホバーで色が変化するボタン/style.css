@@ -1,0 +1,38 @@
+@charset "UTF-8";
+#container {
+  text-align: center;
+}
+
+.btn {
+  background-color: white;
+  color: black;
+  font-weight: 400;
+  border: 1px solid #000000;
+  cursor: pointer;
+  /*ボタンの上にカーソルがのったとき*/
+  margin: 100px;
+  padding: 10px;
+  -webkit-transition: all 2s ease 0.1s;
+  transition: all 2s ease 0.1s;
+  /*どのように状態変化するか*/
+  /* transition: 対象　時間 ease 遅延時間 */
+}
+
+.btn:hover {
+  /*&は親要素(.btn)*/
+  background-color: black;
+  color: white;
+}
+
+/*& .element (親要素の下の全てのelementクラスに対して)
+  {
+      &.second-element{ elementとsecond-elementクラスの両方をもっている要素
+      }
+      & .second-element{ elementの要素の中のsecond-elementのクラスの要素に対して（一回そう下）
+      }
+      & > div { elementの一階層したの要素のdivに対して（孫要素は適用されない）
+      }
+
+    }
+    */
+/*# sourceMappingURL=style.css.map */
