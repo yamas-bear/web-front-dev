@@ -1,0 +1,11 @@
+#container {
+  & .sample {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto; //block要素に対して中央揃え.これを行う場合はwidthを指定しておく必要がある
+    background-color: mediumseagreen;
+    transform: scale(4, 1); //拡大
+    // transform: rotate(100deg); //回転
+    // transform-origin: center center; //回転中心
+  }
+}

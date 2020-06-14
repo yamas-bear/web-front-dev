@@ -1,0 +1,9 @@
+#container .sample {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: mediumseagreen;
+  -webkit-transform: scale(4, 1);
+          transform: scale(4, 1);
+}
+/*# sourceMappingURL=style.css.map */
