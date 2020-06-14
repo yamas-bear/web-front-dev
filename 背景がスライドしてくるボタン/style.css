@@ -3,6 +3,22 @@
   text-align: center;
 }
 
+#container2 {
+  text-align: center;
+}
+
+#container3 {
+  text-align: center;
+}
+
+#container4 {
+  text-align: center;
+}
+
+#container5 {
+  text-align: center;
+}
+
 .btn {
   background-color: white;
   color: black;
@@ -12,10 +28,6 @@
   /*ボタンの上にカーソルがのったとき*/
   margin: 100px;
   padding: 10px;
-  -webkit-transition: all 2s ease 0.1s;
-  transition: all 2s ease 0.1s;
-  /*どのように状態変化するか*/
-  /* transition: 対象　時間 ease 遅延時間 */
 }
 
 .btn.slide-bg {
@@ -35,10 +47,10 @@
   left: 0;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: -webkit-transform 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: transform 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: transform 1s cubic-bezier(0.39, 0.575, 0.565, 1), -webkit-transform 1s cubic-bezier(0.39, 0.575, 0.565, 1);
   z-index: -1;
 }
 
@@ -47,6 +59,138 @@
 }
 
 .btn.slide-bg:hover span {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.btn.slide-bg2 {
+  position: relative;
+  overflow: hidden;
+  /*.slide-bgの枠外を隠す*/
+  z-index: 1;
+}
+
+.btn.slide-bg2 span {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: -webkit-transform 1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: transform 1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: transform 1s cubic-bezier(0.895, 0.03, 0.685, 0.22), -webkit-transform 1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  z-index: -1;
+}
+
+.btn.slide-bg2:hover {
+  color: white;
+}
+
+.btn.slide-bg2:hover span {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.btn.slide-bg3 {
+  position: relative;
+  overflow: hidden;
+  /*.slide-bgの枠外を隠す*/
+  z-index: 1;
+}
+
+.btn.slide-bg3 span {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  transition: -webkit-transform 1s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  transition: transform 1s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  transition: transform 1s cubic-bezier(0.6, 0.04, 0.98, 0.335), -webkit-transform 1s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  z-index: -1;
+}
+
+.btn.slide-bg3:hover {
+  color: white;
+}
+
+.btn.slide-bg3:hover span {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.btn.slide-bg4 {
+  position: relative;
+  overflow: hidden;
+  /*.slide-bgの枠外を隠す*/
+  z-index: 1;
+}
+
+.btn.slide-bg4 span {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 1s cubic-bezier(1, 0, 0, 1);
+  transition: -webkit-transform 1s cubic-bezier(1, 0, 0, 1);
+  transition: transform 1s cubic-bezier(1, 0, 0, 1);
+  transition: transform 1s cubic-bezier(1, 0, 0, 1), -webkit-transform 1s cubic-bezier(1, 0, 0, 1);
+  z-index: -1;
+}
+
+.btn.slide-bg4:hover {
+  color: white;
+}
+
+.btn.slide-bg4:hover span {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.btn.slide-bg5 {
+  position: relative;
+  overflow: hidden;
+  /*.slide-bgの枠外を隠す*/
+  z-index: 1;
+}
+
+.btn.slide-bg5 span {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: -webkit-transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: -1;
+}
+
+.btn.slide-bg5:hover {
+  color: white;
+}
+
+.btn.slide-bg5:hover span {
   -webkit-transform: none;
           transform: none;
 }
