@@ -1,0 +1,51 @@
+$white: white;
+$black: black;
+
+#container {
+  text-align: center;
+}
+
+.btn {
+  background-color: $white;
+  color: $black;
+  font-weight: 400;
+  border: 1px solid #000000;
+  cursor: pointer; /*ボタンの上にカーソルがのったとき*/
+  margin: 100px;
+  padding: 10px;
+
+  &.animation3d {
+    position: relative;
+    z-index: 1;
+    transform-style: preserve-3d; //子要素が3dになる
+    perspective: 300px; //奥行
+
+    & span {
+      //hoverしてないときは.slide-bgの外側にある(translateXが-100%だから)
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background-color: $black;
+      position: absolute;
+      top: 0;
+      left: 0;
+      // transform: rotateX(-90deg); //✕軸に対して奥に90度回転→奥から回転してくる
+      transform: rotateX(
+        90deg
+      ); //✕軸に対して手前にに90度回転→手前から回転してくる
+      z-index: -1;
+      transform-origin: top center;
+      transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+      opacity: 0; //透明度
+    }
+
+    &:hover {
+      color: $white;
+
+      & span {
+        transform: none;
+        opacity: 1;
+      }
+    }
+  }
+}
