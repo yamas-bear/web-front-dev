@@ -1,0 +1,49 @@
+#container {
+  text-align: center;
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  transform-style: preserve-3d; //transform-styleとperspectiveを3dにしたい要素の親要素につけることを忘れない
+  perspective: 300px;
+  width: 150px;
+  height: 50px;
+  margin: 0 auto;
+  cursor: pointer;
+
+  &.cubic {
+    & span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid black;
+      line-height: 48px; //上下に対して中央揃え
+      text-align: center;
+      transform-origin: center center -28px;
+      transition: all 2s;
+    }
+
+    & .hovering {
+      background-color: black;
+      color: white;
+      transform: rotateX(86deg);
+    }
+
+    & .default {
+      background-color: whtie;
+      color: black;
+      transform: rotateX(0);
+    }
+
+    &:hover {
+      & .hovering {
+        transform: rotateX(0);
+      }
+      & .default {
+        transform: rotateX(-90deg);
+      }
+    }
+  }
+}
