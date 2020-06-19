@@ -1,0 +1,35 @@
+.three-dot-spiner {
+  text-align: center;
+
+  & div {
+    display: inline-block;
+    background-color: yellowgreen;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    animation: bounce-animation 2s infinite;
+
+    @for $i from 1 through 2 {
+      &:nth-child(#{$i}) {
+        //セレクタの中で用いるときは#{}が必要
+        animation-delay: -0.32s /
+          $i; //プロパティの中で値として用いるときは$iで大丈夫
+      }
+    }
+  }
+
+  @keyframes bounce-animation {
+    0% {
+      transform: scale(0);
+    }
+    40% {
+      transform: scale(1);
+    }
+    80% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+}
