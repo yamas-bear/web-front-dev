@@ -1,0 +1,50 @@
+.menu-icon {
+  background-color: transparent;
+  border: none;
+  outline: none !important;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  display: block;
+  background-color: black;
+  height: 2px;
+  width: 35px;
+  margin-bottom: 9px;
+  -webkit-transition: -webkit-transform 0.7s;
+  transition: -webkit-transform 0.7s;
+  transition: transform 0.7s;
+  transition: transform 0.7s, -webkit-transform 0.7s;
+}
+
+.menu-icon span:last-child {
+  margin-bottom: 0px;
+}
+
+.menu-open {
+  background-color: black;
+}
+
+.menu-open .menu-icon span {
+  background-color: white;
+}
+
+.menu-open .menu-icon span:nth-child(1) {
+  -webkit-transform: translateY(11px) rotate(135deg);
+          transform: translateY(11px) rotate(135deg);
+  -webkit-transition-delay: -20ms;
+          transition-delay: -20ms;
+}
+
+.menu-open .menu-icon span:nth-child(2) {
+  -webkit-transform: translateX(-18px) scale(0);
+          transform: translateX(-18px) scale(0);
+}
+
+.menu-open .menu-icon span:nth-child(3) {
+  -webkit-transform: translateY(-11px) rotate(-135deg);
+          transform: translateY(-11px) rotate(-135deg);
+  -webkit-transition-delay: 20ms;
+          transition-delay: 20ms;
+}
+/*# sourceMappingURL=style.css.map */

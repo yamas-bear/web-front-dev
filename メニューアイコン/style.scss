@@ -1,0 +1,39 @@
+.menu-icon {
+  background-color: transparent;
+  border: none;
+  outline: none !important; //focusが当たっているときの枠線を削除するため
+  cursor: pointer;
+
+  & span {
+    display: block; //width,heightを設定するにはblockかinline-blockでなければならない
+    background-color: black;
+    height: 2px;
+    width: 35px;
+    margin-bottom: 9px;
+    transition: transform 0.7s;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.menu-open {
+  background-color: black;
+
+  & .menu-icon {
+    & span {
+      background-color: white;
+      &:nth-child(1) {
+        transform: translateY(11px) rotate(135deg); //translateYでY軸方向に移動する
+        transition-delay: -20ms;
+      }
+      &:nth-child(2) {
+        transform: translateX(-18px) scale(0); //translateYでY軸方向に移動する
+      }
+      &:nth-child(3) {
+        transform: translateY(-11px) rotate(-135deg); //translateYでY軸方向に移動する
+        transition-delay: 20ms;
+      }
+    }
+  }
+}
