@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+}
+
+#container {
+  position: relative;
+  height: 100vh;
+  background-color: teal;
+}
+
+.animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0;
+  font-family: "MuseoModerno", cursive;
+
+  &.inview {
+    opacity: 1;
+    & .char {
+      display: inline-block; //transformプロパティはinline要素に対して指定することができないのでinline-blockあるいはblockとしてあげる必要がある
+      animation-name: animate-chars;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-fill-mode: both; //animationの最初の状態と最後の状態で保持する
+      @for $i from 1 through 8 {
+        &:nth-child(#{$i}) {
+          animation-delay: $i * 0.03s;
+        }
+      }
+    }
+  }
+
+  @keyframes animate-chars {
+    0% {
+      opacity: 0;
+      transform: translateY(-50%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
