@@ -7,7 +7,7 @@ class TextAnimation {
   }
   _splitText() {
     return this.chars.reduce((acc, curr) => {
-      curr = curr.replace(/\s+/, "&nbsp;");
+      curr = curr.replace(/\s+/, "&nbsp;"); //空白を挿入する
       return `${acc}<span class="char">${curr}</span>`;
     }, "");
   }
