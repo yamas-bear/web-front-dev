@@ -1,0 +1,74 @@
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.cover-slide {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 80vh;
+
+  &::after {
+    content: ""; //疑似要素のときはcontentに必ず値を設定する必要がある
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background-color: gray;
+    opacity: 0;
+  }
+  &.inview {
+    &::after {
+      opacity: 1;
+      animation-name: kf-cover-slide;
+      animation-duration: 1.6s;
+      animation-timing-function: ease-in-out;
+    }
+  }
+}
+
+@keyframes kf-cover-slide {
+  0% {
+    left: 0;
+    right: 100%; //右からの距離が100%→左に押しつぶされている
+  }
+  50% {
+    left: 0;
+    right: 0;
+  }
+  100% {
+    left: 100%;
+    right: 0;
+  }
+}
+
+.img-zoom {
+  opacity: 0;
+
+  .inview & {
+    opacity: 1;
+    transition: transform 0.3s ease;
+    animation-name: kf-img-show;
+    animation-duration: 1.6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: normal;
+  }
+}
+
+@keyframes kf-img-show {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  50.1% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+  }
+}

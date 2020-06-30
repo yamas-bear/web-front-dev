@@ -1,0 +1,50 @@
+.mobile-menu__btn {
+  background-color: transparent;
+  border: none;
+  outline: none !important;
+  cursor: pointer;
+}
+
+.mobile-menu__btn span {
+  display: block;
+  background-color: black;
+  height: 2px;
+  width: 35px;
+  margin-bottom: 9px;
+  -webkit-transition: -webkit-transform 0.7s;
+  transition: -webkit-transform 0.7s;
+  transition: transform 0.7s;
+  transition: transform 0.7s, -webkit-transform 0.7s;
+}
+
+.mobile-menu__btn span:last-child {
+  margin-bottom: 0px;
+}
+
+.menu-open {
+  background-color: black;
+}
+
+.menu-open .mobile-menu__btn span {
+  background-color: white;
+}
+
+.menu-open .mobile-menu__btn span:nth-child(1) {
+  -webkit-transform: translateY(11px) rotate(135deg);
+          transform: translateY(11px) rotate(135deg);
+  -webkit-transition-delay: -20ms;
+          transition-delay: -20ms;
+}
+
+.menu-open .mobile-menu__btn span:nth-child(2) {
+  -webkit-transform: translateX(-18px) scale(0);
+          transform: translateX(-18px) scale(0);
+}
+
+.menu-open .mobile-menu__btn span:nth-child(3) {
+  -webkit-transform: translateY(-11px) rotate(-135deg);
+          transform: translateY(-11px) rotate(-135deg);
+  -webkit-transition-delay: 20ms;
+          transition-delay: 20ms;
+}
+/*# sourceMappingURL=style.css.map */
