@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const els = document.querySelectorAll(".animate-title");
+  //domの要素がロードされたときに実行される
+  const els = document.querySelectorAll(".animate-title"); //.animate-titleの要素を全て取得する。配列でelsに格納される
   const cb = function (entries, observer) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        const ta = new TextAnimation(entry.target);
+        const ta = new TextAnimation(entry.target); //object作成
         ta.animate();
         observer.unobserve(entry.target);
       } else {

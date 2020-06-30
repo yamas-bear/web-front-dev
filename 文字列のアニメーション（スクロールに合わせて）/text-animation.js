@@ -2,8 +2,8 @@ class TextAnimation {
   constructor(el) {
     this.DOM = {};
     this.DOM.el = el instanceof HTMLElement ? el : document.querySelector(el);
-    this.chars = this.DOM.el.innerHTML.trim().split("");
-    this.DOM.el.innerHTML = this._splitText();
+    this.chars = this.DOM.el.innerHTML.trim().split(""); //空白を挿入
+    this.DOM.el.innerHTML = this._splitText(); //htmlの要素を取得
   }
   _splitText() {
     return this.chars.reduce((acc, curr) => {
@@ -15,6 +15,7 @@ class TextAnimation {
     this.DOM.el.classList.toggle("inview");
   }
 }
+
 class TweenTextAnimation extends TextAnimation {
   constructor(el) {
     super(el);
