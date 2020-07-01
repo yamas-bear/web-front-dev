@@ -1,39 +1,126 @@
-.mobile-menu__btn {
-  background-color: transparent;
-  border: none;
-  outline: none !important; //focusが当たっているときの枠線を削除するため
-  cursor: pointer;
+#container {
+  position: relative;
+  background-color: teal;
+  height: 100vh;
+  z-index: 2;
+  transition: all 0.5s;
+}
 
-  & span {
-    display: block; //width,heightを設定するにはblockかinline-blockでなければならない
-    background-color: black;
-    height: 2px;
-    width: 35px;
-    margin-bottom: 9px;
-    transition: transform 0.7s;
-    &:last-child {
-      margin-bottom: 0px;
+.header {
+  background-color: white;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end; //水平方向のどの位置に配置するかを指定
+  align-items: center;
+}
+
+body {
+  margin: 0em;
+}
+
+.mobile-menu {
+  position: fixed; //位置の固定
+  right: 0;
+  top: 60px;
+  width: 300px;
+
+  &__cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden; //要素を隠す。opacty:0との違いはopacityは透明度が0になるだけで存在はしていて、visibilityは要素が存在していないという判定になる
+    cursor: pointer;
+  }
+  &__main {
+    padding: 0;
+    perspective: 2000px; //3dアニメーションを実装したい子要素の親要素に設定する
+    transform-style: preserve-3d; //3dアニメーションを実装したい子要素の親要素に設定する
+  }
+  &__item {
+    list-style: none;
+    display: block;
+    transform: translate3d(0, 0, -1000px);
+    padding: 0 40px;
+    transition: transform 0.3s, opacity 0.2s;
+    opacity: 0;
+  }
+  &__link {
+    display: block;
+    margin-top: 30px;
+    color: black;
+    text-decoration: none; //下線の色
+  }
+  &__btn {
+    background-color: unset;
+    border: none;
+    outline: none !important; //focusが当たっているときの枠線を削除するため
+    cursor: pointer;
+
+    & > span {
+      display: block; //width,heightを設定するにはblockかinline-blockでなければならない
+      background-color: black;
+      height: 2px;
+      width: 35px;
+      margin-bottom: 9px;
+      transition: transform 0.7s;
+      &:last-child {
+        margin-bottom: 0px;
+      }
     }
   }
 }
 
 .menu-open {
-  background-color: black;
+  & #container {
+    transform: translate(-300px, 60px);
+    box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+  }
 
-  & .mobile-menu__btn {
-    & span {
-      background-color: white;
-      &:nth-child(1) {
-        transform: translateY(11px) rotate(135deg); //translateYでY軸方向に移動する
-        transition-delay: -20ms;
+  & .mobile-menu {
+    &__cover {
+      opacity: 1;
+      visibility: visible;
+    }
+    &__item {
+      transform: none;
+      opacity: 1;
+
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          transition-delay: $i * 0.07s;
+        }
       }
-      &:nth-child(2) {
-        transform: translateX(-18px) scale(0); //translateYでY軸方向に移動する
-      }
-      &:nth-child(3) {
-        transform: translateY(-11px) rotate(-135deg); //translateYでY軸方向に移動する
-        transition-delay: 20ms;
+    }
+    &__btn {
+      & > span {
+        background-color: black;
+        &:nth-child(1) {
+          transform: translateY(11px) rotate(135deg); //translateYでY軸方向に移動する
+          transition-delay: -20ms;
+        }
+        &:nth-child(2) {
+          transform: translateX(-18px) scale(0); //translateYでY軸方向に移動する
+        }
+        &:nth-child(3) {
+          transform: translateY(-11px) rotate(-135deg); //translateYでY軸方向に移動する
+          transition-delay: 20ms;
+        }
       }
     }
   }
+}
+
+.main-title {
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.sub-title {
+  display: block; //横幅いっぱいに広がる
+  font-size: 14px;
+  color: #535353;
 }
